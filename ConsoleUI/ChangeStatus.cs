@@ -35,6 +35,11 @@ Choose the new status of the vehicle (press the option number):
                 Client.eVehicleStatus status = (Client.eVehicleStatus)userChoice;
                 i_Garage.ChangeVehicleStatus(licenseNumber, status);
                 Console.WriteLine($"The vehicle moved from status {oldStatus} to {status}");
+
+                if(status == Client.eVehicleStatus.PaidUp)
+                {
+                    Console.WriteLine("Thank you for using the Garage!");
+                }
             }
             catch
             {
