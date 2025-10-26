@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GarageLogic;
 
 namespace ConsoleUI
@@ -39,6 +35,7 @@ Choose the new status of the vehicle (press the option number):
                 if(status == Client.eVehicleStatus.PaidUp)
                 {
                     Console.WriteLine("Thank you for using the Garage!");
+                    i_Garage.RemoveVehicle(licenseNumber);
                 }
             }
             catch

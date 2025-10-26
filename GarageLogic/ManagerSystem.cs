@@ -36,6 +36,15 @@ namespace GarageLogic
             m_GarageClients.Add(i_Vehicle.LicenseNumber, newClient);
         }
 
+        public void RemoveVehicle(string i_LicenseNumber)
+        {
+            if (!IsInGarage(i_LicenseNumber))
+            {
+                throw new ArgumentException($"License number does not exists in the garage");
+            }
+            m_GarageClients.Remove(i_LicenseNumber);
+        }
+
         internal bool IsInGarage(string i_LicenseNumber)
         {
             return m_GarageClients.ContainsKey(i_LicenseNumber);
